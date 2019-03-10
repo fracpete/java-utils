@@ -5,7 +5,7 @@
 
   <groupId>com.github.fracpete</groupId>
   <artifactId>java-utils</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <parent>
@@ -87,7 +87,7 @@
     <connection>scm:git:https://github.com/fracpete/java-utils</connection>
     <developerConnection>scm:git:https://github.com/fracpete/java-utils</developerConnection>
     <url>https://github.com/fracpete/java-utils</url>
-    <tag>java-utils-0.0.1</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <dependencies>
