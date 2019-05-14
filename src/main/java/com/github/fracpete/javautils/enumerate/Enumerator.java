@@ -21,6 +21,7 @@
 package com.github.fracpete.javautils.enumerate;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Iterator;
 
 /**
@@ -75,6 +76,38 @@ public class Enumerator<T>
    */
   public Enumerator(Iterable<T> iterable, int start, int step) {
     this(iterable.iterator(), start, step);
+  }
+
+  /**
+   * Initializes the array.
+   * Uses starting index 0 and step size 1.
+   *
+   * @param array	the array
+   */
+  public Enumerator(T[] array) {
+    this(Arrays.asList(array).iterator());
+  }
+
+  /**
+   * Initializes the array.
+   * Uses step size 1.
+   *
+   * @param array	the array
+   * @param start 	the starting index
+   */
+  public Enumerator(T[] array, int start) {
+    this(Arrays.asList(array).iterator(), start);
+  }
+
+  /**
+   * Initializes the array.
+   *
+   * @param array	the array
+   * @param start 	the starting index
+   * @param step 	the steps between indices
+   */
+  public Enumerator(T[] array, int start, int step) {
+    this(Arrays.asList(array).iterator(), start, step);
   }
 
   /**

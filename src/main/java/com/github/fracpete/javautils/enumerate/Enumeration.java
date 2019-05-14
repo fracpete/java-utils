@@ -21,6 +21,7 @@
 package com.github.fracpete.javautils.enumerate;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Iterator;
 
 /**
@@ -67,6 +68,33 @@ public class Enumeration<T>
    */
   public Enumeration(Iterable<T> iterable, int start, int step) {
     this(iterable.iterator(), start, step);
+  }
+
+  /**
+   * Initializes the wrapper.
+   *
+   * @param array	the array to wrap
+   */
+  public Enumeration(T[] array) {
+    this(Arrays.asList(array).iterator());
+  }
+
+  /**
+   * Initializes the wrapper.
+   *
+   * @param array	the array to wrap
+   */
+  public Enumeration(T[] array, int start) {
+    this(Arrays.asList(array).iterator(), start);
+  }
+
+  /**
+   * Initializes the wrapper.
+   *
+   * @param array	the array to wrap
+   */
+  public Enumeration(T[] array, int start, int step) {
+    this(Arrays.asList(array).iterator(), start, step);
   }
 
   /**

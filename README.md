@@ -7,7 +7,7 @@ Python-inspired utility functions and classes for Java.
 
 
 The static methods of the `com.github.fracpete.javautils.Enumerate` class allows 
-to associate elements of an `java.lang.Iterable` or `java.util.Iterator` with
+to associate elements of an array, a `java.lang.Iterable` or `java.util.Iterator` with
 an index, by outputting a container class with the two of them. You can use
 different starting indices and step sizes between elements: 
 
@@ -21,7 +21,13 @@ import static com.github.fracpete.javautils.Enumerate.enumerate;
 
 ...
 
-List<String> list = new ArrayList<>(Arrays.asList("a", "b", "c"));
+String[] array = new String[]{"a", "b", "c"};
+List<String> list = new ArrayList<>(Arrays.asList(array));
+
+// Array
+System.out.println("\nWrapping Array:");
+for (Enumerated<String> e: enumerate(array))
+  System.out.println(e.index + ": " + e.value);
 
 // Iterable
 System.out.println("\nWrapping Iterable:");
@@ -136,6 +142,6 @@ Add the following dependency to your `pom.xml`:
     <dependency>
       <groupId>com.github.fracpete</groupId>
       <artifactId>java-utils</artifactId>
-      <version>0.0.1</version>
+      <version>0.0.2</version>
     </dependency>
 ```

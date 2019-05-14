@@ -112,4 +112,46 @@ public class Enumerate {
   public static <E> Iterator<Enumerated<E>> enumerate(Iterator<E> iterable, int start, int step) {
     return new Enumerator<>(iterable, start, step);
   }
+
+  /**
+   * Returns an Iterable wrapper around an array that combines index
+   * (starting at 0 with step 1) and value of the array item in the returned
+   * container object ({@link Enumeration}).
+   *
+   * @param array	the array to wrap
+   * @param <E>		the type of the Iterator's objects
+   * @return		the Iterator wrapper
+   */
+  public static <E> Iterable<Enumerated<E>> enumerate(E[] array) {
+    return new Enumeration<>(array);
+  }
+
+  /**
+   * Returns an Iterable wrapper around an array that combines index
+   * (starting at "start" with step 1) and value of the array item in the returned
+   * container object ({@link Enumeration}).
+   *
+   * @param array	the Iterator to wrap
+   * @param start	the starting index
+   * @param <E>		the type of the Iterator's objects
+   * @return		the Iterator wrapper
+   */
+  public static <E> Iterable<Enumerated<E>> enumerate(E[] array, int start) {
+    return new Enumeration<>(array, start);
+  }
+
+  /**
+   * Returns an Iterable wrapper around an array that combines index
+   * (starting at "start" with step size "step") and value of the array item in the returned
+   * container object ({@link Enumeration}).
+   *
+   * @param array	the array to wrap
+   * @param start	the starting index
+   * @param step 	the step size
+   * @param <E>		the type of the Iterator's objects
+   * @return		the Iterator wrapper
+   */
+  public static <E> Iterable<Enumerated<E>> enumerate(E[] array, int start, int step) {
+    return new Enumeration<>(array, start, step);
+  }
 }

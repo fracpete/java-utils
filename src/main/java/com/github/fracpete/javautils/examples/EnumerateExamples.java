@@ -37,7 +37,13 @@ import static com.github.fracpete.javautils.Enumerate.enumerate;
 public class EnumerateExamples {
 
   public static void main(String[] args) throws Exception {
-    List<String> list = new ArrayList<>(Arrays.asList("a", "b", "c"));
+    String[] array = new String[]{"a", "b", "c"};
+    List<String> list = new ArrayList<>(Arrays.asList(array));
+
+    // Array
+    System.out.println("\nWrapping Array:");
+    for (Enumerated<String> e: enumerate(array))
+      System.out.println(e.index + ": " + e.value);
 
     // Iterable
     System.out.println("\nWrapping Iterable:");
