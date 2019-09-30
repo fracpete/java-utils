@@ -135,6 +135,45 @@ k=C, v=Hello
 ```
 
 
+## Reflection
+
+The `com.github.fracpete.javautils.Reflection` class offers static methods
+to simplify reflection a bit:
+
+* instantiating objects: `newInstance`
+
+  ```java
+  import static com.github.fracpete.javautils.Reflection.newInstance; 
+
+  Object file1 = newInstance("java.io.File", new Class[]{String.class}, new Object[]{System.getProperty("java.io.tmpdir")});
+  System.out.println("newInstance: " + file1);
+
+  Object file2 = newInstance("java.io.File", new Class[]{String.class}, new Object[]{System.getProperty("java.io.tmpdir") + "/some.txt"});
+  System.out.println("newInstance: " + file2);
+  ```
+
+* method calls (with return value): `function` 
+
+  ```java
+  import static com.github.fracpete.javautils.Reflection.function; 
+
+  Object name = function(file1, "getName");
+  System.out.println("name: " + name);
+
+  int comparison = function(file1, "compareTo", new Class[]{File.class}, new Object[]{file2});
+  System.out.println("f1.compareTo(f2): " + comparison);
+  ```
+
+* method calls (without return value): `procedure`
+
+  ```java
+  import static com.github.fracpete.javautils.Reflection.procedure; 
+
+  procedure(file2, "deleteOnExit");
+  System.out.println("called deleteOnExit");
+  ```
+
+
 ## Maven
 
 Add the following dependency to your `pom.xml`:
