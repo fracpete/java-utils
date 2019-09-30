@@ -15,15 +15,15 @@
   </parent>
 
   <name>java-utils</name>
-  <description>Python-inspired utility functions and classes for Java.</description>
+  <description>Python-inspired utility functions and classes (and others) for Java.</description>
   <organization>
     <name>University of Waikato, Hamilton, NZ</name>
     <url>http://www.waikato.ac.nz/</url>
   </organization>
   <licenses>
     <license>
-      <name>GNU General Public License 3</name>
-      <url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
+      <name>MIT</name>
+      <url>https://opensource.org/licenses/MIT</url>
     </license>
   </licenses>
 
